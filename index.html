@@ -1,0 +1,1742 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Siox Logistics LLC - Harvard Standard English Assessment</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            background: linear-gradient(135deg, #1a237e 0%, #3949ab 100%);
+            min-height: 100vh;
+            color: #333;
+            line-height: 1.7;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            text-align: center;
+            margin-bottom: 30px;
+            border-top: 5px solid #c41e3a;
+        }
+
+       .logo-img {
+    height: 70px;
+    width: auto;
+    object-fit: contain;
+    display: block;
+    margin-right: 18px;
+}
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    margin-bottom: 15px;
+}
+        .subtitle {
+            color: #666;
+            font-size: 1.2em;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+
+        .harvard-badge {
+            background: #c41e3a;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+
+        .test-info {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 8px;
+            margin-top: 20px;
+            text-align: left;
+            border-left: 4px solid #1a237e;
+        }
+
+        .test-info h3 {
+            color: #1a237e;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+
+        .test-navigation {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            margin-bottom: 30px;
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: 25px;
+        }
+
+        .nav-btn {
+            padding: 15px 25px;
+            background: #1a237e;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1.1em;
+            transition: all 0.3s ease;
+            min-width: 180px;
+            font-weight: 600;
+        }
+
+        .nav-btn:hover {
+            background: #303f9f;
+            transform: translateY(-2px);
+        }
+
+        .nav-btn.active {
+            background: #c41e3a;
+            box-shadow: 0 4px 15px rgba(196, 30, 58, 0.3);
+        }
+
+        .section-indicator {
+            flex: 1;
+            text-align: center;
+            font-weight: bold;
+            color: #1a237e;
+            font-size: 1.1em;
+            padding: 15px;
+        }
+
+        .test-section {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            margin-bottom: 30px;
+            display: none;
+        }
+
+        .test-section.active {
+            display: block;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 25px;
+            border-bottom: 3px solid #ecf0f1;
+        }
+
+        .section-title {
+            font-size: 2.2em;
+            color: #1a237e;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .section-instructions {
+            color: #666;
+            font-style: italic;
+            font-size: 1.1em;
+        }
+
+        .passage-container {
+            background: #fafafa;
+            padding: 35px;
+            border-radius: 10px;
+            margin-bottom: 35px;
+            border-left: 6px solid #1a237e;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+
+        .passage-header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #e0e0e0;
+        }
+
+        .passage-title {
+            font-size: 1.6em;
+            font-weight: bold;
+            margin-bottom: 8px;
+            color: #1a237e;
+        }
+
+        .passage-author {
+            font-style: italic;
+            color: #666;
+            font-size: 1.1em;
+        }
+
+        .reading-passage {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+            line-height: 1.8;
+            border: 1px solid #e0e0e0;
+            font-size: 1.05em;
+        }
+
+        .reading-passage p {
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+
+        .questions-section {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 10px;
+            margin-top: 25px;
+        }
+
+        .questions-title {
+            font-size: 1.4em;
+            font-weight: bold;
+            margin-bottom: 25px;
+            color: #1a237e;
+            text-align: center;
+        }
+
+        .question-block {
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+            border-left: 4px solid #c41e3a;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .question {
+            margin-bottom: 25px;
+        }
+
+        .question-number {
+            font-weight: bold;
+            color: #c41e3a;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        .question-text {
+            margin-bottom: 15px;
+            color: #444;
+            font-size: 1.05em;
+            line-height: 1.6;
+        }
+
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .option {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 12px 15px;
+            background: #f8f9fa;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.2s;
+            border: 2px solid transparent;
+        }
+
+        .option:hover {
+            background: #e3f2fd;
+            border-color: #1a237e;
+        }
+
+        .option input[type="radio"] {
+            margin-top: 2px;
+        }
+
+        .option-text {
+            flex: 1;
+            line-height: 1.5;
+        }
+
+        .writing-section {
+            background: #f8f9fa;
+            padding: 35px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+
+        .writing-task {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            border-left: 6px solid #c41e3a;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+
+        .task-title {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #1a237e;
+            margin-bottom: 20px;
+        }
+
+        .task-instructions {
+            background: #fff3e0;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            border-left: 4px solid #ff9800;
+        }
+
+        .task-instructions h4 {
+            color: #e65100;
+            margin-bottom: 10px;
+        }
+
+        .task-instructions ul {
+            margin: 15px 0 15px 25px;
+        }
+
+        .task-instructions li {
+            margin-bottom: 8px;
+            line-height: 1.5;
+        }
+
+        .writing-area {
+            position: relative;
+        }
+
+        textarea {
+            width: 100%;
+            min-height: 250px;
+            padding: 20px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-family: 'Georgia', serif;
+            font-size: 1.05em;
+            resize: vertical;
+            transition: border-color 0.3s;
+            line-height: 1.6;
+        }
+
+        textarea:focus {
+            outline: none;
+            border-color: #1a237e;
+            box-shadow: 0 0 10px rgba(26, 35, 126, 0.1);
+        }
+
+        .word-count {
+            text-align: right;
+            color: #666;
+            font-size: 0.95em;
+            margin-top: 8px;
+            font-weight: 500;
+        }
+
+        .typing-test {
+            background: #f8f9fa;
+            padding: 35px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+
+        .typing-container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            border-left: 6px solid #4caf50;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+
+        .typing-text {
+            background: #f5f5f5;
+            padding: 25px;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            font-size: 1.1em;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            border: 2px solid #e0e0e0;
+        }
+
+        .typed-correct {
+            background-color: #c8e6c9;
+            color: #2e7d32;
+        }
+
+        .typed-incorrect {
+            background-color: #ffcdd2;
+            color: #d32f2f;
+        }
+
+        .current-word {
+            background-color: #fff3e0;
+            border: 2px solid #ff9800;
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+
+        .essay-analysis {
+            background: #e3f2fd;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+            border-left: 4px solid #2196f3;
+        }
+
+        .analysis-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+            padding: 5px 0;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .analysis-label {
+            font-weight: bold;
+            color: #1976d2;
+        }
+
+        .analysis-value {
+            color: #333;
+        }
+
+        .grammar-check {
+            background: #fff3e0;
+            padding: 15px;
+            border-radius: 6px;
+            margin-top: 15px;
+            border-left: 4px solid #ff9800;
+        }
+
+        .grammar-issue {
+            background: #ffebee;
+            padding: 8px 12px;
+            margin: 5px 0;
+            border-radius: 4px;
+            border-left: 3px solid #f44336;
+            font-size: 0.95em;
+        }
+
+        .typing-input {
+            width: 100%;
+            padding: 20px;
+            font-family: 'Courier New', monospace;
+            font-size: 1.1em;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .typing-input:focus {
+            outline: none;
+            border-color: #4caf50;
+        }
+
+        .typing-stats {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+            padding: 20px;
+            background: #e8f5e9;
+            border-radius: 8px;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 1.8em;
+            font-weight: bold;
+            color: #2e7d32;
+        }
+
+        .stat-label {
+            color: #666;
+            font-size: 0.9em;
+        }
+
+        .timer {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #c41e3a;
+            color: white;
+            padding: 12px 18px;
+            border-radius: 25px;
+            font-weight: bold;
+            z-index: 1000;
+            box-shadow: 0 4px 15px rgba(196, 30, 58, 0.3);
+            font-size: 1.1em;
+        }
+
+        .progress-container {
+            margin-top: 25px;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: #ecf0f1;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #1a237e, #c41e3a);
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+
+        .submit-section {
+            text-align: center;
+            margin-top: 50px;
+            padding: 40px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .submit-btn {
+            background: linear-gradient(135deg, #2e7d32, #4caf50);
+            color: white;
+            border: none;
+            padding: 18px 45px;
+            border-radius: 30px;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: bold;
+            box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(76, 175, 80, 0.4);
+        }
+
+        .harvard-info {
+            background: #e8f5e8;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 25px;
+            font-size: 0.95em;
+            border-left: 4px solid #4caf50;
+        }
+
+        .hr-evaluation {
+            background: #fff3e0;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+            border-left: 4px solid #ff9800;
+        }
+
+        .hr-evaluation h4 {
+            color: #e65100;
+            margin-bottom: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .nav-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .nav-btn {
+                width: 100%;
+                max-width: 280px;
+            }
+            
+            .container {
+                padding: 15px;
+            }
+            
+            .timer {
+                position: relative;
+                top: auto;
+                right: auto;
+                margin-bottom: 20px;
+                display: inline-block;
+            }
+
+            .typing-stats {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+    <div class="timer" id="timer">Time: 30:00</div>
+    
+    <div class="container">
+        <div class="header">
+          <div class="logo">
+            <img src="image\siox black logo.png" alt="SIOX GLOBAL Logo" class="logo-img" />
+        </div>
+            <div class="harvard-badge">JOINING APPLICANTS</div>
+            <div class="subtitle">English Proficiency Assessment</div>
+            <div class="test-info">
+                <h3>Assessment Overview</h3>
+                <p><strong>Duration:</strong> 45 minutes total</p>
+                <p><strong>Sections:</strong> Reading Comprehension (7 questions) • Academic Writing (1 essay) • Typing Speed Test</p>
+                <p><strong>Standard:</strong> English Level</p>
+                <p><strong>Evaluation:</strong> Comprehensive scoring with detailed HR feedback</p>
+                <p><strong>Requirement:</strong> 85%+ overall score for employment consideration</p>
+                
+                <div style="margin-top: 20px; padding: 15px; background: white; border-radius: 8px; border-left: 4px solid #1a237e;">
+                    <label for="candidateName" style="display: block; font-weight: bold; margin-bottom: 8px; color: #1a237e;">Candidate Name:</label>
+                    <input type="text" id="candidateName" placeholder="Enter your full name" style="width: 100%; padding: 10px; border: 2px solid #e0e0e0; border-radius: 6px; font-size: 1.1em;" required>
+                </div>
+            </div>
+        </div>
+
+        <div class="test-navigation">
+            <div class="nav-buttons">
+                <button class="nav-btn" id="prevBtn" onclick="previousSection()" style="display: none;">← Previous</button>
+                <div class="section-indicator" id="sectionIndicator">Section 1 of 3: Reading Comprehension</div>
+                <button class="nav-btn" id="nextBtn" onclick="nextSection()">Next →</button>
+            </div>
+            <div class="progress-container">
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Reading Comprehension Section -->
+        <div class="test-section active" id="reading">
+            <div class="section-header">
+                <div class="section-title">📚 Reading Comprehension</div>
+                <div class="section-instructions">7 Multiple Choice Questions</div>
+            </div>
+            
+            <!-- Passage 1: To Kill a Mockingbird -->
+            <div class="passage-container">
+                <div class="passage-header">
+                    <div class="passage-title">Passage 1: Social Justice and Moral Courage</div>
+                    <div class="passage-author">From "To Kill a Mockingbird" by Harper Lee</div>
+                </div>
+                
+                <div class="reading-passage">
+                    <p>"You never really understand a person until you consider things from his point of view," Atticus told his daughter Scout, "until you climb into his skin and walk around in it." This fundamental principle of empathy forms the cornerstone of moral understanding in a complex society where prejudice and misunderstanding often cloud human judgment.</p>
+                    
+                    <p>The small town of Maycomb, Alabama, in the 1930s serves as a microcosm of American society, where deeply entrenched social hierarchies and racial prejudices dictate the interactions between different groups of people. Within this environment, Atticus Finch emerges as a figure of moral integrity, choosing to defend Tom Robinson, a black man falsely accused of rape, despite knowing that his actions will bring social ostracism and professional consequences upon himself and his family.</p>
+                    
+                    <p>The children in the story, Scout and Jem, initially view their world through the innocent lens of childhood, gradually awakening to the harsh realities of adult society. Their journey from innocence to understanding mirrors the broader human experience of confronting uncomfortable truths about the world we inhabit. Through their eyes, we witness how prejudice is learned rather than innate, and how courage manifests not in physical bravery alone, but in the willingness to stand for what is right even when standing alone.</p>
+                    
+                    <p>Mrs. Dubose, the morphine-addicted neighbor whom the children initially fear and despise, becomes an unlikely teacher of courage. Her struggle to overcome her addiction before death, despite the pain it causes her, demonstrates that real courage is "when you know you're licked before you begin but you begin anyway and you see it through." This definition of courage transcends the simple heroics often celebrated in popular culture, revealing instead the quiet dignity of those who persist in doing right despite overwhelming odds.</p>
+                    
+                    <p>The mockingbird itself serves as a powerful symbol throughout the narrative, representing innocence and goodness that should be protected rather than destroyed. Tom Robinson and Boo Radley both embody this symbolism—individuals who, despite their vulnerability, contribute positively to their community only to be misunderstood, persecuted, or ignored by those around them. The destruction of such innocence represents a fundamental failure of society to protect its most vulnerable members.</p>
+                    
+                    <p>Lee's masterpiece ultimately argues that true understanding requires us to transcend our own limited perspectives and genuinely attempt to comprehend the experiences of others. This empathetic understanding, while difficult to achieve, represents the foundation upon which a just and compassionate society must be built. The novel's enduring relevance lies in its recognition that the struggle between prejudice and understanding, between fear and empathy, continues to define human relationships across all cultures and time periods.</p>
+                </div>
+
+                <div class="questions-section">
+                    <div class="questions-title">Questions 1-7: Multiple Choice</div>
+                    
+                    <div class="question-block">
+                        <div class="question">
+                            <div class="question-number">Question 1</div>
+                            <div class="question-text">According to Atticus Finch's philosophy, true understanding of another person requires:</div>
+                            <div class="options">
+                                <label class="option">
+                                    <input type="radio" name="q1" value="A">
+                                    <span class="option-text">A) Careful observation of their behavior in public settings</span>
+                                </label>
+                                <label class="option">
+                                    <input type="radio" name="q1" value="B">
+                                    <span class="option-text">B) Adopting their perspective and experiencing life from their viewpoint</span>
+                                </label>
+                                <label class="option">
+                                    <input type="radio" name="q1" value="C">
+                                    <span class="option-text">C) Reading about their background and personal history</span>
+                                </label>
+                                <label class="option">
+                                    <input type="radio" name="q1" value="D">
+                                    <span class="option-text">D) Engaging in lengthy conversations about their beliefs</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="question">
+                            <div class="question-number">Question 2</div>
+                            <div class="question-text">The town of Maycomb in the 1930s is described as:</div>
+                            <div class="options">
+                                <label class="option">
+                                    <input type="radio" name="q2" value="A">
+                                    <span class="option-text">A) A progressive community ahead of its time</span>
+                                </label>
+                                <label class="option">
+                                    <input type="radio" name="q2" value="B">
+                                    <span class="option-text">B) A representative example of American society with established social hierarchies</span>
+                                </label>
+                                <label class="option">
+                                    <input type="radio" name="q2" value="C">
+                                    <span class="option-text">C) An isolated community unaffected by broader social issues</span>
+                                </label>
+                                <label class="option">
+                                    <input type="radio" name="q2" value="D">
+                                    <span class="option-text">D) A wealthy enclave protected from social problems</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="question">
+                            <div class="question-number">Question 3</div>
+                            <div class="question-text">Mrs. Dubose's struggle with morphine addiction teaches the children that courage is:</div>
+                            <div class="options">
+                                <label class="option">
+                                    <input type="radio" name="q3" value="A">
+                                    <span class="option-text">A) The ability to overcome physical pain</span>
+                                </label>
+                                <label class="option">
+                                    <input type="radio" name="q3" value="B">
+                                    <span class="option-text">B) Persisting in doing what is right despite knowing the odds are against you</span>
+                                </label>
+                                <label class="option">
+                                    <input type="radio" name="q3" value="C">
+                                    <span class="option-text">C) Fighting against those who oppose you</span>
+                                </label>
+                                <label class="option">
+                                    <input type="radio" name="q3" value="D">
+                                    <span class="option-text">D) Hiding your weaknesses from others</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="question">
+                            <div class="question-number">Question 4</div>
+                            <div class="question-text">The mockingbird symbolism in the novel represents:</div>
+                            <div class="options">
+                                <label class="option">
+                                    <input type="radio" name="q4" value="A">
+                                    <span class="option-text">A) The beauty of nature that should be preserved</span>
+                                </label>
+                                <label class="option">
+                                    <input type="radio" name="q4" value="B">
+                                    <span class="option-text">B) Innocence and goodness that deserve protection from harm</span>
+                                </label>
+                                <label class="option">
+                                    <input type="radio" name="q4" value="C">
+                                    <span class="option-text">C) The freedom that all individuals should possess</span>
+                                </label>
+                                <label class="option">
+                                    <input type="radio" name="q4" value="D">
+                                    <span class="option-text">D) The voice of truth in a world of lies</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="question">
+                            <div class="question-number">Question 5</div>
+                            <div class="question-text">The children's journey from innocence to understanding primarily demonstrates:</div>
+                            <div class="options">
+                                <label class="option">
+                                    <input type="radio" name="q5" value="A">
+                                    <span class="option-text">A) That children are naturally prejudiced</span>
+                                </label>
+                                <label class="option">
+                                    <input type="radio" name="q5" value="B">
+                                    <span class="option-text">B) How prejudice is learned rather than innate</span>
+                                </label>
+                                <label class="option">
+                                    <input type="radio" name="q5" value="C">
+                                    <span class="option-text">C) The importance of formal education</span>
+                                </label>
+                                <label class="option">
+                                    <input type="radio" name="q5" value="D">
+                                    <span class="option-text">D) That adults are always wrong</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="question">
+                            <div class="question-number">Question 6</div>
+                            <div class="question-text">Atticus Finch's decision to defend Tom Robinson despite social consequences shows:</div>
+                            <div class="options">
+                                <label class="option">
+                                    <input type="radio" name="q6" value="A">
+                                    <span class="option-text">A) His desire for professional advancement</span>
+                                </label>
+                                <label class="option">
+                                    <input type="radio" name="q6" value="B">
+                                    <span class="option-text">B) Moral integrity and willingness to stand for what is right</span>
+                                </label>
+                                <label class="option">
+                                    <input type="radio" name="q6" value="C">
+                                    <span class="option-text">C) His ignorance of social expectations</span>
+                                </label>
+                                <label class="option">
+                                    <input type="radio" name="q6" value="D">
+                                    <span class="option-text">D) A calculated political move</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="question">
+                            <div class="question-number">Question 7</div>
+                            <div class="question-text">The passage suggests that a just and compassionate society must be built on:</div>
+                            <div class="options">
+                                <label class="option">
+                                    <input type="radio" name="q7" value="A">
+                                    <span class="option-text">A) Strict law enforcement</span>
+                                </label>
+                                <label class="option">
+                                    <input type="radio" name="q7" value="B">
+                                    <span class="option-text">B) Economic prosperity</span>
+                                </label>
+                                <label class="option">
+                                    <input type="radio" name="q7" value="C">
+                                    <span class="option-text">C) Empathetic understanding and genuine comprehension of others' experiences</span>
+                                </label>
+                                <label class="option">
+                                    <input type="radio" name="q7" value="D">
+                                    <span class="option-text">D) Traditional social hierarchies</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+        </div>
+
+        <!-- Academic Writing Section -->
+        <div class="test-section" id="writing">
+            <div class="section-header">
+                <div class="section-title">✍️ Writing</div>
+                <div class="section-instructions">1 Essay Question</div>
+            </div>
+            
+            <div class="writing-section">
+                <div class="writing-task">
+                    <div class="task-title">Essay Question</div>
+                    <div class="task-instructions">
+                        <h4>Topic: "Technology has fundamentally changed human communication for the better."</h4>
+                        <p><strong>Instructions:</strong> Write a well-structured academic essay of 400-500 words that presents your position on this statement. Your essay should include:</p>
+                        
+                        <ul style="margin: 20px 0 20px 25px; line-height: 1.6;">
+                            <li><strong>Introduction:</strong> Clear thesis statement presenting your position</li>
+                            <li><strong>Body Paragraphs:</strong> 2-3 paragraphs with evidence and examples supporting your argument</li>
+                            <li><strong>Counterargument:</strong> Acknowledge and address opposing viewpoints</li>
+                            <li><strong>Conclusion:</strong> Summarize your argument and provide final thoughts</li>
+                            <li><strong>Academic Standards:</strong> Use sophisticated vocabulary, varied sentence structures, and proper grammar</li>
+                        </ul>
+                        
+                        <div style="background: #fff3e0; padding: 15px; border-radius: 8px; border-left: 4px solid #ff9800;">
+                            <strong>Evaluation Criteria:</strong> Argument strength, organization, language sophistication, critical thinking, and grammar
+                        </div>
+                    </div>
+                    
+                    <div class="writing-area">
+                        <textarea id="essay1" placeholder="Write your essay here..." oninput="updateWordCount('essay1', 'essayCount1'); analyzeEssay()"></textarea>
+                        <div class="word-count" id="essayCount1">Word count: 0 / 400-500 words required</div>
+                        
+                        <div class="essay-analysis" id="essayAnalysis" style="display: none;">
+                            <h4 style="color: #1976d2; margin-bottom: 15px;">📊 Real-time Essay Analysis (HR Preview)</h4>
+                            <div class="analysis-item">
+                                <span class="analysis-label">Word Count:</span>
+                                <span class="analysis-value" id="analysisWordCount">0</span>
+                            </div>
+                            <div class="analysis-item">
+                                <span class="analysis-label">Sentence Count:</span>
+                                <span class="analysis-value" id="analysisSentenceCount">0</span>
+                            </div>
+                            <div class="analysis-item">
+                                <span class="analysis-label">Average Sentence Length:</span>
+                                <span class="analysis-value" id="analysisAvgSentence">0 words</span>
+                            </div>
+                            <div class="analysis-item">
+                                <span class="analysis-label">Paragraph Count:</span>
+                                <span class="analysis-value" id="analysisParagraphCount">0</span>
+                            </div>
+                            <div class="analysis-item">
+                                <span class="analysis-label">Vocabulary Level:</span>
+                                <span class="analysis-value" id="analysisVocabLevel">Basic</span>
+                            </div>
+                            <div class="analysis-item">
+                                <span class="analysis-label">Academic Words:</span>
+                                <span class="analysis-value" id="analysisAcademicWords">0</span>
+                            </div>
+                            <div class="analysis-item">
+                                <span class="analysis-label">Transition Words:</span>
+                                <span class="analysis-value" id="analysisTransitions">0</span>
+                            </div>
+                            <div class="analysis-item">
+                                <span class="analysis-label">Structure Score:</span>
+                                <span class="analysis-value" id="analysisStructure">0/10</span>
+                            </div>
+                            
+                            <div class="grammar-check" id="grammarCheck">
+                                <h5 style="color: #e65100; margin-bottom: 10px;">⚠️ Potential Issues:</h5>
+                                <div id="grammarIssues">No issues detected yet...</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Typing Speed Test Section -->
+        <div class="test-section" id="typing">
+            <div class="section-header">
+                <div class="section-title">⌨️ Typing Speed Test</div>
+                <div class="section-instructions">Time: 2 minutes | Professional Typing Assessment</div>
+            </div>
+            
+            <div class="typing-test">
+                <div class="typing-container">
+                    <div class="task-title">Professional Typing Assessment</div>
+                    <p><strong>Instructions:</strong> Type the following text exactly as shown. Focus on accuracy and speed. The test will automatically calculate your words per minute (WPM) and accuracy percentage.</p>
+                    
+                    <div class="typing-text" id="typingText">
+                        <span id="typingDisplay">In today's rapidly evolving business environment, effective communication skills have become more crucial than ever before. Companies across all industries are seeking employees who can articulate their ideas clearly, write professional correspondence, and adapt their communication style to different audiences and contexts. The ability to convey complex information in a concise and understandable manner is particularly valuable in logistics and supply chain management, where coordination between multiple stakeholders is essential for success.</span>
+                    </div>
+                    
+                    <div class="writing-area">
+                        <textarea id="typingInput" class="typing-input" placeholder="Start typing the text above here..." oninput="calculateTypingStats()" onpaste="return false"></textarea>
+                    </div>
+                    
+                    <div class="typing-stats">
+                        <div class="stat-item">
+                            <div class="stat-value" id="wpm">0</div>
+                            <div class="stat-label">Words Per Minute</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value" id="accuracy">100%</div>
+                            <div class="stat-label">Accuracy</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value" id="timeElapsed">0:00</div>
+                            <div class="stat-label">Time Elapsed</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value" id="progress">0%</div>
+                            <div class="stat-label">Progress</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="submit-section" id="submitSection" style="display: none;">
+            <h3>Complete Assessment</h3>
+            <p>Review your responses and submit your assessment for HR evaluation.</p>
+            <div style="display: flex; gap: 20px; justify-content: center; margin-top: 30px;">
+                <button class="submit-btn" onclick="submitAssessment()">Submit to HR</button>
+                 <div id="afterSubmit"></div> 
+                <button class="submit-btn" onclick="downloadResults()" style="background: linear-gradient(135deg, #1a237e, #3949ab);">Download Results</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let currentSection = 'reading';
+        let currentSectionIndex = 0;
+        let sections = ['reading', 'writing', 'typing'];
+        let sectionNames = ['Reading Comprehension', 'Academic Writing', 'Typing Speed Test'];
+        let timeLeft = 45 * 60; // 45 minutes in seconds
+        let timerInterval;
+        let typingStartTime = null;
+        let typingTimer = null;
+
+        // Start timer when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            startTimer();
+            updateProgress();
+            updateNavigationButtons();
+        });
+
+        function startTimer() {
+            timerInterval = setInterval(() => {
+                timeLeft--;
+                updateTimerDisplay();
+                
+                if (timeLeft <= 0) {
+                    clearInterval(timerInterval);
+                    alert('Time is up! Your assessment will be submitted automatically.');
+                    submitAssessment();
+                }
+            }, 1000);
+        }
+
+        function updateTimerDisplay() {
+            const minutes = Math.floor(timeLeft / 60);
+            const seconds = timeLeft % 60;
+            document.getElementById('timer').textContent = 
+                `Time: ${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+        }
+
+        function nextSection() {
+            if (currentSectionIndex < sections.length - 1) {
+                currentSectionIndex++;
+                showSection(sections[currentSectionIndex]);
+            }
+        }
+
+        function previousSection() {
+            if (currentSectionIndex > 0) {
+                currentSectionIndex--;
+                showSection(sections[currentSectionIndex]);
+            }
+        }
+
+        function showSection(sectionName) {
+            // Hide all sections
+            document.querySelectorAll('.test-section').forEach(section => {
+                section.classList.remove('active');
+            });
+            
+            // Show selected section
+            document.getElementById(sectionName).classList.add('active');
+            
+            currentSection = sectionName;
+            currentSectionIndex = sections.indexOf(sectionName);
+            updateProgress();
+            updateNavigationButtons();
+        }
+
+        function updateNavigationButtons() {
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            const indicator = document.getElementById('sectionIndicator');
+            
+            // Update section indicator
+            indicator.textContent = `Section ${currentSectionIndex + 1} of ${sections.length}: ${sectionNames[currentSectionIndex]}`;
+            
+            // Show/hide previous button
+            if (currentSectionIndex === 0) {
+                prevBtn.style.display = 'none';
+            } else {
+                prevBtn.style.display = 'block';
+            }
+            
+            // Update next button or show submit
+            if (currentSectionIndex === sections.length - 1) {
+                nextBtn.style.display = 'none';
+                document.getElementById('submitSection').style.display = 'block';
+            } else {
+                nextBtn.style.display = 'block';
+                document.getElementById('submitSection').style.display = 'none';
+            }
+        }
+
+        function updateProgress() {
+            const progress = ((currentSectionIndex + 1) / sections.length) * 100;
+            document.getElementById('progressFill').style.width = progress + '%';
+        }
+
+        function updateWordCount(textareaId, countId) {
+            const textarea = document.getElementById(textareaId);
+            const words = textarea.value.trim().split(/\s+/).filter(word => word.length > 0);
+            const wordCount = words.length;
+            
+            let requirement = ' / 400-500 words required';
+            
+            document.getElementById(countId).textContent = `Word count: ${wordCount}${requirement}`;
+        }
+
+        function analyzeEssay() {
+            const essay = document.getElementById('essay1').value;
+            const analysisDiv = document.getElementById('essayAnalysis');
+            
+            if (essay.trim().length < 50) {
+                analysisDiv.style.display = 'none';
+                return;
+            }
+            
+            analysisDiv.style.display = 'block';
+            
+            // Basic text analysis
+            const words = essay.trim().split(/\s+/).filter(word => word.length > 0);
+            const sentences = essay.split(/[.!?]+/).filter(s => s.trim().length > 0);
+            const paragraphs = essay.split(/\n\s*\n/).filter(p => p.trim().length > 0);
+            
+            // Academic vocabulary list
+            const academicWords = [
+                'furthermore', 'moreover', 'consequently', 'nevertheless', 'therefore', 'however',
+                'analysis', 'evaluate', 'demonstrate', 'significant', 'substantial', 'comprehensive',
+                'fundamental', 'essential', 'crucial', 'critical', 'substantial', 'considerable',
+                'perspective', 'paradigm', 'methodology', 'framework', 'concept', 'theory',
+                'hypothesis', 'evidence', 'research', 'study', 'investigation', 'examination'
+            ];
+            
+            // Transition words
+            const transitionWords = [
+                'however', 'therefore', 'furthermore', 'moreover', 'consequently', 'nevertheless',
+                'additionally', 'similarly', 'conversely', 'in contrast', 'on the other hand',
+                'for example', 'for instance', 'specifically', 'in particular', 'in conclusion',
+                'to summarize', 'in summary', 'finally', 'ultimately', 'thus', 'hence'
+            ];
+            
+            // Count academic and transition words
+            const lowerText = essay.toLowerCase();
+            const academicCount = academicWords.filter(word => lowerText.includes(word)).length;
+            const transitionCount = transitionWords.filter(word => lowerText.includes(word)).length;
+            
+            // Calculate vocabulary level
+            const avgWordLength = words.reduce((sum, word) => sum + word.length, 0) / words.length;
+            let vocabLevel = 'Basic';
+            if (avgWordLength > 5 && academicCount > 3) vocabLevel = 'Advanced';
+            else if (avgWordLength > 4 && academicCount > 1) vocabLevel = 'Intermediate';
+            
+            // Structure analysis
+            let structureScore = 0;
+            if (paragraphs.length >= 4) structureScore += 3; // Good paragraph structure
+            if (academicCount >= 3) structureScore += 2; // Academic vocabulary
+            if (transitionCount >= 2) structureScore += 2; // Good transitions
+            if (words.length >= 400 && words.length <= 500) structureScore += 2; // Appropriate length
+            if (sentences.length >= 15) structureScore += 1; // Sufficient sentence variety
+            
+            // Update analysis display
+            document.getElementById('analysisWordCount').textContent = words.length;
+            document.getElementById('analysisSentenceCount').textContent = sentences.length;
+            document.getElementById('analysisAvgSentence').textContent = 
+                sentences.length > 0 ? Math.round(words.length / sentences.length) + ' words' : '0 words';
+            document.getElementById('analysisParagraphCount').textContent = paragraphs.length;
+            document.getElementById('analysisVocabLevel').textContent = vocabLevel;
+            document.getElementById('analysisAcademicWords').textContent = academicCount;
+            document.getElementById('analysisTransitions').textContent = transitionCount;
+            document.getElementById('analysisStructure').textContent = structureScore + '/10';
+            
+            // Grammar and style checks
+            checkGrammarIssues(essay);
+        }
+
+        function checkGrammarIssues(essay) {
+            const issues = [];
+            
+            // Common grammar issues to check
+            if (essay.includes(' i ') || essay.startsWith('i ')) {
+                issues.push('Capitalization: "i" should be "I"');
+            }
+            
+            if (essay.match(/\b(there|their|they're)\b/gi)) {
+                issues.push('Check: Verify correct usage of there/their/they\'re');
+            }
+            
+            if (essay.match(/\b(your|you're)\b/gi)) {
+                issues.push('Check: Verify correct usage of your/you\'re');
+            }
+            
+            if (essay.match(/\b(its|it's)\b/gi)) {
+                issues.push('Check: Verify correct usage of its/it\'s');
+            }
+            
+            // Check for run-on sentences (very long sentences)
+            const sentences = essay.split(/[.!?]+/);
+            const longSentences = sentences.filter(s => s.trim().split(/\s+/).length > 30);
+            if (longSentences.length > 0) {
+                issues.push(`${longSentences.length} potentially long sentence(s) detected`);
+            }
+            
+            // Check for repetitive words
+            const words = essay.toLowerCase().split(/\s+/);
+            const wordCount = {};
+            words.forEach(word => {
+                if (word.length > 4) {
+                    wordCount[word] = (wordCount[word] || 0) + 1;
+                }
+            });
+            
+            const repetitive = Object.entries(wordCount).filter(([word, count]) => count > 3);
+            if (repetitive.length > 0) {
+                issues.push(`Repetitive words: ${repetitive.map(([word]) => word).join(', ')}`);
+            }
+            
+            // Check for paragraph structure
+            const paragraphs = essay.split(/\n\s*\n/);
+            if (paragraphs.length < 4) {
+                issues.push('Consider adding more paragraphs for better structure');
+            }
+            
+            // Display issues
+            const issuesDiv = document.getElementById('grammarIssues');
+            if (issues.length === 0) {
+                issuesDiv.innerHTML = '✅ No major issues detected';
+                issuesDiv.style.color = '#2e7d32';
+            } else {
+                issuesDiv.innerHTML = issues.map(issue => 
+                    `<div class="grammar-issue">${issue}</div>`
+                ).join('');
+            }
+        }
+
+        function calculateTypingStats() {
+            const typingInput = document.getElementById('typingInput');
+            const originalText = document.getElementById('typingText').textContent.trim();
+            const typedText = typingInput.value;
+            
+            // Start timing on first keystroke
+            if (!typingStartTime && typedText.length > 0) {
+                typingStartTime = new Date();
+                typingTimer = setInterval(updateTypingTime, 1000);
+                
+                // Auto-stop after 2 minutes
+                setTimeout(() => {
+                    if (typingTimer) {
+                        clearInterval(typingTimer);
+                        typingInput.disabled = true;
+                        document.getElementById('submitSection').style.display = 'block';
+                        alert('Typing test completed! You can now submit your assessment.');
+                    }
+                }, 120000); // 2 minutes
+            }
+            
+            // Update visual highlighting
+            updateTypingHighlight(originalText, typedText);
+            
+            // Calculate progress
+            const progress = Math.min(100, (typedText.length / originalText.length) * 100);
+            document.getElementById('progress').textContent = Math.round(progress) + '%';
+            
+            // Calculate accuracy
+            let correctChars = 0;
+            for (let i = 0; i < typedText.length; i++) {
+                if (i < originalText.length && typedText[i] === originalText[i]) {
+                    correctChars++;
+                }
+            }
+            
+            const accuracy = typedText.length > 0 ? (correctChars / typedText.length) * 100 : 100;
+            document.getElementById('accuracy').textContent = Math.round(accuracy) + '%';
+            
+            // Calculate WPM
+            if (typingStartTime) {
+                const timeElapsed = (new Date() - typingStartTime) / 1000 / 60; // minutes
+                const wordsTyped = typedText.trim().split(/\s+/).filter(word => word.length > 0).length;
+                const wpm = timeElapsed > 0 ? Math.round(wordsTyped / timeElapsed) : 0;
+                document.getElementById('wpm').textContent = wpm;
+            }
+            
+            // Check if typing test is complete
+            if (progress >= 100 || (typingStartTime && (new Date() - typingStartTime) >= 120000)) {
+                if (typingTimer) {
+                    clearInterval(typingTimer);
+                    typingInput.disabled = true;
+                }
+                // Submit section will be shown by navigation logic when on typing section
+            }
+        }
+
+        function updateTypingHighlight(originalText, typedText) {
+            const displayElement = document.getElementById('typingDisplay');
+            let highlightedText = '';
+            
+            // Split into words for better highlighting
+            const originalWords = originalText.split(' ');
+            const typedWords = typedText.split(' ');
+            
+            let charIndex = 0;
+            
+            for (let wordIndex = 0; wordIndex < originalWords.length; wordIndex++) {
+                const originalWord = originalWords[wordIndex];
+                const typedWord = typedWords[wordIndex] || '';
+                
+                // Determine if this is the current word being typed
+                const isCurrentWord = wordIndex === typedWords.length - 1 && typedText.length > 0 && !typedText.endsWith(' ');
+                const isNextWord = wordIndex === typedWords.length && typedText.endsWith(' ');
+                
+                if (wordIndex < typedWords.length - 1 || (wordIndex === typedWords.length - 1 && typedText.endsWith(' '))) {
+                    // Word is completed
+                    const isCorrect = originalWord === typedWord;
+                    highlightedText += `<span class="${isCorrect ? 'typed-correct' : 'typed-incorrect'}">${originalWord}</span>`;
+                } else if (isCurrentWord || isNextWord) {
+                    // Current word being typed
+                    highlightedText += `<span class="current-word">${originalWord}</span>`;
+                } else {
+                    // Untyped words
+                    highlightedText += originalWord;
+                }
+                
+                // Add space between words (except for the last word)
+                if (wordIndex < originalWords.length - 1) {
+                    highlightedText += ' ';
+                }
+            }
+            
+            displayElement.innerHTML = highlightedText;
+        }
+
+        function updateTypingTime() {
+            if (typingStartTime) {
+                const elapsed = Math.floor((new Date() - typingStartTime) / 1000);
+                const minutes = Math.floor(elapsed / 60);
+                const seconds = elapsed % 60;
+                document.getElementById('timeElapsed').textContent = 
+                    `${minutes}:${seconds.toString().padStart(2, '0')}`;
+            }
+        }
+
+        function analyzeEssayForScoring(essay) {
+            const words = essay.trim().split(/\s+/).filter(word => word.length > 0);
+            const sentences = essay.split(/[.!?]+/).filter(s => s.trim().length > 0);
+            const paragraphs = essay.split(/\n\s*\n/).filter(p => p.trim().length > 0);
+            
+            // Academic vocabulary analysis
+            const academicWords = [
+                'furthermore', 'moreover', 'consequently', 'nevertheless', 'therefore', 'however',
+                'analysis', 'evaluate', 'demonstrate', 'significant', 'substantial', 'comprehensive',
+                'fundamental', 'essential', 'crucial', 'critical', 'perspective', 'paradigm',
+                'methodology', 'framework', 'concept', 'theory', 'hypothesis', 'evidence'
+            ];
+            
+            const transitionWords = [
+                'however', 'therefore', 'furthermore', 'moreover', 'consequently', 'nevertheless',
+                'additionally', 'similarly', 'conversely', 'in contrast', 'on the other hand',
+                'for example', 'for instance', 'specifically', 'in conclusion', 'finally'
+            ];
+            
+            const lowerText = essay.toLowerCase();
+            const academicCount = academicWords.filter(word => lowerText.includes(word)).length;
+            const transitionCount = transitionWords.filter(word => lowerText.includes(word)).length;
+            
+            // Grammar checks
+            const grammarIssues = [];
+            if (essay.includes(' i ') || essay.startsWith('i ')) grammarIssues.push('Capitalization issues');
+            if (essay.match(/\b(there|their|they're)\b/gi)) grammarIssues.push('Homophone usage check needed');
+            if (essay.match(/\b(your|you're)\b/gi)) grammarIssues.push('Contraction usage check needed');
+            
+            const longSentences = sentences.filter(s => s.trim().split(/\s+/).length > 30).length;
+            if (longSentences > 0) grammarIssues.push(`${longSentences} potentially long sentences`);
+            
+            // Structure analysis
+            const hasIntroduction = paragraphs.length > 0 && paragraphs[0].toLowerCase().includes('technology') || paragraphs[0].toLowerCase().includes('communication');
+            const hasConclusion = paragraphs.length > 0 && (paragraphs[paragraphs.length - 1].toLowerCase().includes('conclusion') || 
+                                  paragraphs[paragraphs.length - 1].toLowerCase().includes('summary') ||
+                                  paragraphs[paragraphs.length - 1].toLowerCase().includes('therefore') ||
+                                  paragraphs[paragraphs.length - 1].toLowerCase().includes('thus'));
+            
+            return {
+                wordCount: words.length,
+                sentenceCount: sentences.length,
+                paragraphCount: paragraphs.length,
+                academicWordCount: academicCount,
+                transitionWordCount: transitionCount,
+                avgSentenceLength: sentences.length > 0 ? Math.round(words.length / sentences.length) : 0,
+                avgWordLength: words.length > 0 ? (words.reduce((sum, word) => sum + word.length, 0) / words.length).toFixed(1) : 0,
+                grammarIssues: grammarIssues,
+                hasIntroduction: hasIntroduction,
+                hasConclusion: hasConclusion,
+                vocabularyLevel: academicCount > 3 ? 'Advanced' : academicCount > 1 ? 'Intermediate' : 'Basic'
+            };
+        }
+
+        function calculateWritingScore(analysis) {
+            let score = 0;
+            
+            // Word count (20 points max)
+            if (analysis.wordCount >= 400 && analysis.wordCount <= 500) score += 20;
+            else if (analysis.wordCount >= 350 && analysis.wordCount < 600) score += 15;
+            else if (analysis.wordCount >= 300) score += 10;
+            else score += 5;
+            
+            // Structure (25 points max)
+            if (analysis.paragraphCount >= 4) score += 10;
+            else if (analysis.paragraphCount >= 3) score += 7;
+            else score += 3;
+            
+            if (analysis.hasIntroduction) score += 8;
+            if (analysis.hasConclusion) score += 7;
+            
+            // Academic vocabulary (20 points max)
+            if (analysis.academicWordCount >= 5) score += 20;
+            else if (analysis.academicWordCount >= 3) score += 15;
+            else if (analysis.academicWordCount >= 1) score += 10;
+            else score += 5;
+            
+            // Transitions and flow (15 points max)
+            if (analysis.transitionWordCount >= 3) score += 15;
+            else if (analysis.transitionWordCount >= 2) score += 10;
+            else if (analysis.transitionWordCount >= 1) score += 7;
+            else score += 3;
+            
+            // Sentence variety (10 points max)
+            if (analysis.avgSentenceLength >= 15 && analysis.avgSentenceLength <= 25) score += 10;
+            else if (analysis.avgSentenceLength >= 12 && analysis.avgSentenceLength <= 30) score += 7;
+            else score += 4;
+            
+            // Grammar and style (10 points max)
+            if (analysis.grammarIssues.length === 0) score += 10;
+            else if (analysis.grammarIssues.length <= 2) score += 7;
+            else if (analysis.grammarIssues.length <= 4) score += 4;
+            else score += 2;
+            
+            return Math.min(100, score); // Cap at 100%
+        }
+
+    async function submitAssessment() {
+    const candidateName = document.getElementById('candidateName').value.trim();
+    if (!candidateName) {
+        alert('Please enter your name before submitting the assessment.');
+        return;
+    }
+
+    clearInterval(timerInterval);
+    if (typingTimer) clearInterval(typingTimer);
+
+    const assessment = generateAssessmentData(candidateName);
+
+    // ✅ Generate and download the PDF
+    await createHRDocument(assessment);
+
+    // ✅ Feedback to user
+    alert("✅ Assessment submitted!\nA PDF copy has been downloaded.\nPlease send it to: hr@sioxlogistics.com");
+
+    // ✅ Optionally display confirmation or next steps
+    document.getElementById('afterSubmit').innerHTML = `
+        <p><strong>PDF downloaded successfully!</strong><br>
+        Email the PDF to <b>hr@sioxlogistics.com</b> to complete your submission.</p>
+    `;
+}
+
+        function downloadResults() {
+            const candidateName = document.getElementById('candidateName').value.trim();
+            if (!candidateName) {
+                alert('Please enter your name before downloading results.');
+                return;
+            }
+            
+            const assessment = generateAssessmentData(candidateName);
+            const userDocument = createUserDocument(assessment);
+            
+            try {
+                // Create downloadable file
+                const blob = new Blob([userDocument], { type: 'text/plain;charset=utf-8' });
+                const url = window.URL.createObjectURL(blob);
+                
+                // Create temporary download link
+                const downloadLink = document.createElement('a');
+                downloadLink.href = url;
+                downloadLink.download = `${candidateName.replace(/[^a-zA-Z0-9]/g, '_')}_Assessment_Results.txt`;
+                downloadLink.style.display = 'none';
+                
+                // Add to DOM, click, and remove
+                document.body.appendChild(downloadLink);
+                downloadLink.click();
+                document.body.removeChild(downloadLink);
+                
+                // Clean up the URL object
+                setTimeout(() => {
+                    window.URL.revokeObjectURL(url);
+                }, 100);
+                
+                alert('Your assessment results have been downloaded successfully!');
+                
+            } catch (error) {
+                // Fallback method if blob download fails
+                const textArea = document.createElement('textarea');
+                textArea.value = userDocument;
+                textArea.style.position = 'fixed';
+                textArea.style.opacity = '0';
+                document.body.appendChild(textArea);
+                textArea.select();
+                
+                try {
+                    document.execCommand('copy');
+                    alert('Download failed, but your results have been copied to clipboard. Please paste into a text file and save.');
+                } catch (copyError) {
+                    alert('Download failed. Please copy the results from the console log.');
+                    console.log('=== YOUR ASSESSMENT RESULTS ===');
+                    console.log(userDocument);
+                }
+                
+                document.body.removeChild(textArea);
+            }
+        }
+
+        function generateAssessmentData(candidateName) {
+            // Collect all answers
+            const assessment = {
+                candidateName: candidateName,
+                timestamp: new Date().toISOString(),
+                timeSpent: Math.round((30 * 60 - timeLeft) / 60),
+                
+                // Reading Comprehension - Multiple Choice
+                multipleChoice: {},
+                
+                // Academic Writing
+                academicWriting: {
+                    essay: document.getElementById('essay1').value
+                },
+                
+                // Typing Test Results
+                typingTest: {
+                    wpm: parseInt(document.getElementById('wpm').textContent) || 0,
+                    accuracy: parseInt(document.getElementById('accuracy').textContent.replace('%', '')) || 0,
+                    timeElapsed: document.getElementById('timeElapsed').textContent || '0:00',
+                    progress: parseInt(document.getElementById('progress').textContent.replace('%', '')) || 0
+                }
+            };
+            
+            // Collect multiple choice answers with correct answers
+            const correctAnswers = {
+                q1: 'B', q2: 'B', q3: 'B', q4: 'B', q5: 'B', q6: 'B', q7: 'C'
+            };
+            
+            let correctCount = 0;
+            for (let i = 1; i <= 7; i++) {
+                const selected = document.querySelector(`input[name="q${i}"]:checked`);
+                const userAnswer = selected ? selected.value : 'not_answered';
+                const isCorrect = userAnswer === correctAnswers[`q${i}`];
+                
+                assessment.multipleChoice[`question_${i}`] = {
+                    userAnswer: userAnswer,
+                    correctAnswer: correctAnswers[`q${i}`],
+                    isCorrect: isCorrect
+                };
+                
+                if (isCorrect) correctCount++;
+            }
+            
+            // Calculate detailed writing score with analysis
+            const essayAnalysis = analyzeEssayForScoring(assessment.academicWriting.essay);
+            const writingScore = calculateWritingScore(essayAnalysis);
+            
+            // Calculate scores
+            const readingScore = (correctCount / 7) * 100;
+            const typingScore = assessment.typingTest.wpm >= 40 && assessment.typingTest.accuracy >= 95 ? 90 : 60;
+            const overallScore = (readingScore * 0.4) + (writingScore * 0.4) + (typingScore * 0.2); // Weighted average
+            
+            // Store essay analysis for HR
+            assessment.essayAnalysis = essayAnalysis;
+            
+            assessment.scores = {
+                readingScore: readingScore,
+                writingScore: writingScore,
+                typingScore: typingScore,
+                overallScore: overallScore,
+                correctAnswers: correctCount,
+                totalQuestions: 7,
+                essayWordCount: assessment.academicWriting.essay.trim().split(/\s+/).filter(w => w.length > 0).length,
+                typingPass: assessment.typingTest.wpm >= 40 && assessment.typingTest.accuracy >= 95,
+                overallStatus: overallScore >= 75 ? 'QUALIFIED' : 'NOT QUALIFIED'
+            };
+            
+            return assessment;
+        }
+           async function createHRDocument(assessment, logoBase64, qrCodeBase64, signatureBase64) {
+  const { jsPDF } = window.jspdf;
+  const doc = new jsPDF({ orientation: "portrait", unit: "mm", format: "a4" });
+
+  const date = new Date(assessment.timestamp);
+  const formattedDate = date.toLocaleDateString();
+  const formattedTime = date.toLocaleTimeString();
+
+  const leftMargin = 15;
+  const wrapWidth = 180;
+  let y = 10;
+  const lineHeight = 6;
+  const pageHeight = 290;
+
+  // === Utility functions ===
+  const addSectionTitle = (title) => {
+    if (y > pageHeight) { doc.addPage(); y = 10; }
+    doc.setTextColor(0, 0, 128); // dark blue
+    doc.setFont(undefined, 'bold');
+    doc.text(title, leftMargin, y);
+    doc.setTextColor(0, 0, 0); // reset to black
+    y += lineHeight;
+    doc.setFont(undefined, 'normal');
+  };
+
+  const addWrappedText = (text) => {
+    const lines = doc.splitTextToSize(text, wrapWidth);
+    for (let line of lines) {
+      if (y > pageHeight) { doc.addPage(); y = 10; }
+      doc.text(line, leftMargin, y);
+      y += lineHeight;
+    }
+  };
+
+  // === Add Logo ===
+  if (logoBase64) {
+    doc.addImage(logoBase64, 'PNG', 160, 8, 35, 15); // top-right corner
+  }
+
+  // === Document Title ===
+  doc.setFont("helvetica", "bold");
+  doc.setFontSize(13);
+  doc.setTextColor(34, 34, 34);
+  doc.text("SIOX LOGISTICS LLC - NEW JOINEE STANDARD ASSESSMENT", leftMargin, y);
+  y += lineHeight;
+  doc.text("HR EVALUATION REPORT", leftMargin, y);
+  y += lineHeight * 1.5;
+
+  doc.setFontSize(11);
+  doc.setTextColor(0, 0, 0);
+  doc.setFont(undefined, 'normal');
+
+  // === Sections ===
+  addSectionTitle("CANDIDATE INFORMATION:");
+  addWrappedText(`Name: ${assessment.candidateName}`);
+  addWrappedText(`Date: ${formattedDate}`);
+  addWrappedText(`Time: ${formattedTime}`);
+  addWrappedText(`Duration: ${assessment.timeSpent} minutes`);
+
+  addSectionTitle("READING COMPREHENSION SECTION:");
+  addWrappedText(`Score: ${assessment.scores.readingScore.toFixed(1)}% (${assessment.scores.correctAnswers}/7 correct)`);
+
+  addSectionTitle("WRITING SECTION:");
+  addWrappedText(`Score: ${assessment.scores.writingScore.toFixed(1)}%`);
+  addWrappedText(`Word Count: ${assessment.scores.essayWordCount} words (Requirement: 400–500 words)`);
+
+  addWrappedText("STRUCTURE ANALYSIS:");
+  addWrappedText(`- Introduction Present: ${assessment.essayAnalysis.hasIntroduction ? '✓ YES' : '✗ NO'}`);
+  addWrappedText(`- Conclusion Present: ${assessment.essayAnalysis.hasConclusion ? '✓ YES' : '✗ NO'}`);
+  addWrappedText(`- Paragraph Structure: ${
+    assessment.essayAnalysis.paragraphCount >= 4
+      ? '✓ GOOD'
+      : assessment.essayAnalysis.paragraphCount >= 3
+      ? '⚠ ADEQUATE'
+      : '✗ POOR'
+  }`);
+
+  addSectionTitle("COMPLETE ESSAY SUBMISSION:");
+  addWrappedText(assessment.academicWriting.essay);
+
+  addSectionTitle("TYPING SPEED TEST SECTION:");
+  addWrappedText(`Score: ${assessment.scores.typingScore.toFixed(1)}%`);
+  addWrappedText(`Speed: ${assessment.typingTest.wpm} WPM`);
+  addWrappedText(`Accuracy: ${assessment.typingTest.accuracy}%`);
+  addWrappedText(`Time Elapsed: ${assessment.typingTest.timeElapsed}`);
+  addWrappedText(`Progress: ${assessment.typingTest.progress}%`);
+  addWrappedText(`Status: ${assessment.scores.typingPass ? 'PASS' : 'FAIL'}`);
+
+  addSectionTitle("OVERALL ASSESSMENT SUMMARY:");
+  addWrappedText(`Reading: ${assessment.scores.readingScore.toFixed(1)}% (40%)`);
+  addWrappedText(`Writing: ${assessment.scores.writingScore.toFixed(1)}% (40%)`);
+  addWrappedText(`Typing: ${assessment.scores.typingScore.toFixed(1)}% (20%)`);
+  addWrappedText(`FINAL SCORE: ${assessment.scores.overallScore.toFixed(1)}%`);
+  addWrappedText(`QUALIFICATION: ${assessment.scores.overallStatus}`);
+  addWrappedText(`PASS THRESHOLD: 75%`);
+
+  addSectionTitle("HR RECOMMENDATION:");
+  const recommendation = assessment.scores.overallStatus === 'QUALIFIED'
+    ? '✓ PROCEED TO NEXT INTERVIEW STAGE'
+    : '✗ DOES NOT MEET MINIMUM REQUIREMENTS';
+  addWrappedText(recommendation);
+
+  addSectionTitle("REPORT GENERATED:");
+  addWrappedText(`${new Date().toLocaleString()}`);
+  addWrappedText("System: Siox Logistics HR Portal");
+
+  // === Footer with QR Code and Digital Signature ===
+  doc.setFontSize(10);
+  y = 270;
+
+  if (signatureBase64) {
+    doc.text("HR Digital Signature:", leftMargin, y - 2);
+    doc.addImage(signatureBase64, 'PNG', leftMargin + 40, y - 10, 30, 10);
+  }
+
+  if (qrCodeBase64) {
+    doc.text("Scan to Verify:", 160, y - 2);
+    doc.addImage(qrCodeBase64, 'PNG', 160, y - 20, 25, 25);
+  }
+
+  // === Save PDF ===
+ // const fileName = `${assessment.candidateName.replace(/\s+/g, "_")}_HR_Assessment.pdf`;
+  //doc.save(fileName);
+  //const pdfBytes = doc.output('arraybuffer');
+  const pdfBytes = doc.output('arraybuffer');
+
+// 🔁 Send to locking API on Netlify
+const response = await fetch('/.netlify/functions/lock-pdf', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/pdf'
+  },
+  body: pdfBytes
+});
+
+if (!response.ok) {
+  alert("❌ Failed to lock PDF. Please try again.");
+  return;
+}
+
+// 📥 Receive locked PDF and trigger download
+const lockedBlob = await response.blob();
+const downloadUrl = URL.createObjectURL(lockedBlob);
+const a = document.createElement('a');
+a.href = downloadUrl;
+a.download = `${assessment.candidateName.replace(/\s+/g, "_")}_HR_Assessment_LOCKED.pdf`;
+document.body.appendChild(a);
+a.click();
+a.remove();
+URL.revokeObjectURL(downloadUrl);
+}
+
+function createUserDocument(assessment) {
+ let doc = `SIOX LOGISTICS LLC ENGLISH ASSESSMENT - CANDIDATE COPY
+=====================================
+Candidate: ${assessment.candidateName}
+Date: ${new Date(assessment.timestamp).toLocaleDateString()}
+Time: ${new Date(assessment.timestamp).toLocaleTimeString()}
+
+ASSESSMENT COMPLETION SUMMARY:
+=====================================
+✓ Reading Comprehension: Completed (7 questions)
+✓ Academic Writing: Completed (${assessment.scores.essayWordCount} words)
+✓ Typing Speed Test: Completed (${assessment.typingTest.wpm} WPM, ${assessment.typingTest.accuracy}% accuracy)
+
+Assessment Duration: ${assessment.timeSpent} minutes
+
+YOUR ESSAY SUBMISSION:
+=====================================
+Topic: "Technology has fundamentally changed human communication for the better."
+
+${assessment.academicWriting.essay}
+
+=====================================
+NEXT STEPS:
+Your assessment has been submitted to Siox Logistics HR for evaluation.
+Results and feedback will be provided separately by the HR department.
+
+Thank you for completing the SIOX LOGISTICS LLC English Assessment.
+
+Generated: ${new Date().toLocaleString()}
+Siox Logistics LLC Assessment Portal
+`;
+            
+            return doc;
+        }
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9634bc65b0423e22',t:'MTc1MzIwNjE2MC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
